@@ -99,13 +99,13 @@ void contagem(int cont){ //Mostra nos leds do PORTB o número de refeições
     for(i=1;i<=cont;i++) BitSet(PORTB,i); //liga os leds do PORTB até o parâmetro recebido
     atraso_ms(600);
 }
-void msg(char veiculo[10]){  //Etapas de cocção
+void msg(char tipo[10]){  //Etapas de cocção
     lcd_cmd(L_CLR);
     lcd_cmd(L_L1);
     lcd_str("Modo Selecionado");
     lcd_cmd(L_L2);
     lcd_str("  ");
-    lcd_str(veiculo);
+    lcd_str(tipo);
     atraso_ms(1000);
     lcd_cmd(L_CLR);
     lcd_str("Inicializando");
@@ -113,7 +113,7 @@ void msg(char veiculo[10]){  //Etapas de cocção
     lcd_cmd(L_CLR);
     lcd_str("Medindo");
     lcd_cmd(L_L2);
-    lcd_str(veiculo);
+    lcd_str(tipo);
     lcd_str(" ");
     atraso_ms(50);
     timer(10,0);
@@ -129,7 +129,7 @@ void msg(char veiculo[10]){  //Etapas de cocção
     lcd_cmd(L_L1);
     lcd_str("Cozinhando");
     lcd_cmd(L_L2);
-    lcd_str(veiculo);
+    lcd_str(tipo);
     lcd_str("...");
     BitSet(PORTC,2); //liga o cooler
     atraso_ms(50);
